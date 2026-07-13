@@ -1,0 +1,2 @@
+# Eaglauncher
+Eaglercraft version launcher
