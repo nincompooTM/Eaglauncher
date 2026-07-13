@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Eaglauncher 1.1</title>
+    <link rel="icon" type="image/png" href="./icon.png">
+  </head>
+
+  <style>
+body{
+    background-image: url("./res/menu/dirt.jpg");
+}
+
+.Launch{
+    background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color:#7892c2;
+    border-radius:6px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:bold;
+    padding:7px 24px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #283966;
+    position: fixed;
+    top:95%;
+    right:752px;
+}
+.Launch:hover {
+    background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color:#476e9e;
+}
+
+select {
+    background-color:#ffffff;
+    position: fixed;
+    top:95%;
+    left:752px;
+    appearance: base-select;
+    font-size:18px;
+    border-radius:0px;
+    padding:7px 0px;
+    width:300px;
+}
+select::picker(select) {
+    background-color:#ffffff;
+    appearance: base-select;
+    font-size:18px;
+    border-radius:0px;
+    padding:7px 0px;
+    width:320px;
+}
+
+.preview{
+    position: fixed;
+    top:25vh;
+    right:600px;
+    border-radius:6px;
+    border:3px solid #4e6096;
+}
+
+.info{
+    font-size:18px;
+    color:#ffffff;
+    position: fixed;
+    top: 94%;
+    left: 48px;
+}
+.infoImg{
+    position: fixed;
+    top: 95%;
+    left: 8px;
+}
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  console.log("Eaglauncher V1.1-pre");
+  const launchLink = document.getElementById("Launch");
+  const prevImg = document.getElementById("preview");
+  const dropdown = document.getElementById('Versions');
+  dropdown.addEventListener('change', function(event) {
+    const versionName = dropdown.options[dropdown.selectedIndex].text;
+    const selectedVersion = event.target.value;
+    launchLink.href = selectedVersion;
+    prevImg.src = "./res/previews/" + versionName + ".png";
+    console.log("Updated preview image to ", prevImg);
+    console.log("Updated version to ", selectedVersion);
+  });
+  });
+  </script>
+
+  <body>
+  <select class="Versions" id="Versions">
+    <option value="./versions/Release/Eaglercraft1.12u3.html">1.12.2-u3</option>
+    <option value="./versions/Clients/PixelClient1.12.2.html">Pixel-Client-1.12.2</option>
+    <option value="./versions/Release/Eaglercraft1.8u51.html">1.8.8-u51</option>
+    <option value="./versions/Clients/WurstXB2.html">WurstX-B2-1.8.8</option>
+    <option value="./versions/Clients/PixelClient1.8.8.html">Pixel-Client-1.8.8</option>
+    <option value="./versions/Clients/PiClient.html">PiClient-1.8.8</option>
+    <option value="./versions/Release/Eaglercraft1.6.4.html">1.6.4</option>
+    <option value="./versions/Release/Eaglercraft1.5.2sp-1.html">1.5.2-sp_02</option>
+    <option value="./versions/Clients/OddFuture.html">OddFuture-1.5.2</option>
+    <option value="./versions/Release/Eaglercraft1.2.5.html">1.2.5</option>
+    <option value="./versions/Alpha+Beta/EaglercraftBeta1.7.html">Beta-1.7.3</option>
+    <option value="./versions/Alpha+Beta/EaglercraftBeta1.3.html">Beta-1.3</option>
+    <option value="./versions/Alpha+Beta/EaglercraftAlpha1.2.6.html">Alpha-1.2.6</option>
+    <option value="./versions/Mods/EaglercraftLITE.html">Lite-modpack</option>
+    <option value="./versions/Mods/EaglercraftEXPLORE.html">Explore-modpack</option>
+    <option value="./versions/Mods/EaglercraftULTIMATE.html">Ultimate-modpack</option>
+    <option value="./versions/Mods/EaglercraftTECH.html">Tech-modpack</option>
+    <option value="./versions/Mods/EaglercraftSKYFACTORY.html">Skyfactory-modpack</option>
+    <option value="./versions/Other/Indev.html">Indev</option>
+    <option value="./versions/Other/Scratch.html">Scratch</option>
+    <option value="./versions/Other/Eaglerforgeu48.html">Eaglerforge</option>
+  </select>
+
+  <img class="logo" src="./res/menu/logo.png" width="500">
+  <img class="preview" id="preview" src="./res/previews/1.12.2-u3.png" width="720" height="356">
+  <p class="info">made by nincompoo<p>
+  <img class="infoImg" src="./res/menu/nincompoo.png">
+
+  <a href="./versions/Release/Eaglercraft1.12u3.html" class="Launch" id="Launch">Launch<a>
+</html>
